@@ -9,7 +9,7 @@ export default function NavBar() {
 	const [MessageCount, setMessageCount] = useState(5);
 
 	return (
-		<nav className='h-[100vh] border-r-2 w-auto border-grey-200 flex flex-col'>
+		<nav className='h-[100vh]  w-auto  flex flex-col'>
 			<div className='flex items-center justify-center h-min mb-3'>
 				<svg
 					width='45'
