@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LogoutBtn(props: any) {
   return (
-		<button className={`bg-red-400 text-white hover:bg-red-700 rounded-full px-4 py-3 mt-2 mx-2 xl:mx-auto font-semibold xl:flex items-center justify-center aspect-square xl:aspect-auto xl:w-[85%] sm:opacity-100 hover:opacity-100 active:opacity-100 ${props.className}`}>
+		<button className={`bg-red-400 text-white hover:bg-red-700 rounded-full px-4 py-3 mt-2 mx-2 xl:mx-auto font-semibold flex  items-center justify-center aspect-auto sm:aspect-square xl:aspect-auto xl:w-[85%] sm:opacity-100 hover:opacity-100 active:opacity-100 ${props.className}`}>
 			<svg
 				width='30'
 				height='30'
@@ -16,7 +16,7 @@ export default function LogoutBtn(props: any) {
 				/>
 			</svg>
 
-			<div className='hidden xl:flex ml-2 text-xl'>LogOut</div>
+			<div className='flex sm:hidden xl:flex ml-2 text-xl'>LogOut</div>
 		</button>
 	);
 }
