@@ -8,13 +8,13 @@ export default function NavBar() {
 	const [NotificationsCount, setNotificationsCount] = useState(1);
 	const [MessageCount, setMessageCount] = useState(5);
 
-	const [menuActiveClass, setmenuActiveClass] = useState('-left-0');
+	const [menuActiveClass, setmenuActiveClass] = useState('-left-80');
 
 	const handlehamburgertoggel = () => {
-		if (menuActiveClass === '-left-60') {
+		if (menuActiveClass === '-left-80') {
 			setmenuActiveClass('left-0');
 		} else {
-			setmenuActiveClass('-left-60');
+			setmenuActiveClass('-left-80');
 		}
 	};
 
