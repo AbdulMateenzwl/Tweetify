@@ -1,10 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import NavBar from '@/Components/NavBar';
-import SmUserCard from '@/Components/UserCard/SmUserCard';
+// import { Inter } from 'next/font/google';
+import NavBar from '../components/NavBar';
+import {SmUserCard} from '../components/UserCard';
 
-const inter = Inter({ subsets: ['latin'] });
+
 
 export const metadata: Metadata = {
 	title: 'Tweetify | Home',

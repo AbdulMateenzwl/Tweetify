@@ -1,8 +1,11 @@
-import React from 'react'
+'use client';
+import React from 'react';
 
-export default function LogoutBtn(props: any) {
-  return (
-		<button className={`bg-red-400 text-white hover:bg-red-700 rounded-full px-4 py-3 mt-2 mx-2 xl:mx-auto font-semibold flex  items-center justify-center aspect-auto sm:aspect-square xl:aspect-auto xl:w-[85%] sm:opacity-100 hover:opacity-100 active:opacity-100 ${props.className}`}>
+export function LogoutBtn(props: any) {
+	return (
+		<button
+			className={`bg-red-400 text-white hover:bg-red-700 rounded-full px-4 py-3 mt-2 mx-2 xl:mx-auto font-semibold flex  items-center justify-center aspect-auto sm:aspect-square xl:aspect-auto xl:w-[85%] sm:opacity-100 hover:opacity-100 active:opacity-100 ${props.className}`}
+		>
 			<svg
 				width='30'
 				height='30'
@@ -17,6 +20,36 @@ export default function LogoutBtn(props: any) {
 			</svg>
 
 			<div className='flex sm:hidden xl:flex ml-2 text-xl'>LogOut</div>
+		</button>
+	);
+}
+
+export function FollowBtn(props: any) {
+	const handleCreateConnection = () => {
+		// Create Connection
+	};
+
+	return (
+		<button
+			className='ml-auto theme-bg-blue rounded-full px-3 py-0 text-[0.5rem] text-white h-6 my-auto'
+			onClick={handleCreateConnection}
+		>
+			Follow
+		</button>
+	);
+}
+
+export function UnFollowBtn(props: any) {
+	const handleRemoveConnection = () => {
+		// Remove Connection
+	};
+
+	return (
+		<button
+			className='ml-auto theme-bg-blue rounded-full px-3 py-0 text-[0.5rem] text-white h-6 my-auto'
+			onClick={handleRemoveConnection}
+		>
+			UnFollow
 		</button>
 	);
 }

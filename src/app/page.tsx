@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import NavBar from '@/Components/NavBar';
-import SmUserCard from '@/Components/UserCard/SmUserCard';
+import NavBar from '../components/NavBar';
+import {SmUserCard} from '../components/UserCard';
 
 export default function Home() {
 	return (

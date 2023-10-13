@@ -2,11 +2,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import LogoutBtn from './Buttons/LogoutBtn';
+import {LogoutBtn} from '../components/Button';
 
 export default function NavBar() {
+
 	const [NotificationsCount, setNotificationsCount] = useState(1);
 	const [MessageCount, setMessageCount] = useState(5);
+	const loggedInUser = 'username';
 
 	const [menuActiveClass, setmenuActiveClass] = useState('-left-80');
 
@@ -204,7 +206,7 @@ export default function NavBar() {
 						</svg>
 						<div className='hidden xl:flex ml-2 text-xl'>Tweet</div>
 					</button>
-					<div className='flex justify-center items-center  hover:bg-gray-100 py-3 px-5 rounded-full mx-2 aspect-auto sm:aspect-square xl:aspect-auto mt-auto'>
+					<Link href={`/user/${loggedInUser}`} className='flex justify-center items-center  hover:bg-gray-100 py-3 px-5 rounded-full mx-2 aspect-auto sm:aspect-square xl:aspect-auto mt-auto'>
 						<svg
 							width='30'
 							height='30'
@@ -229,7 +231,7 @@ export default function NavBar() {
 							<p className=' font-bold'>Full Name</p>
 							<p className=''>@Username</p>
 						</div>
-					</div>
+					</Link>
 					{/* Log Out Button */}
 					<LogoutBtn className='mb-16 sm:mb-2' />
 				</div>
