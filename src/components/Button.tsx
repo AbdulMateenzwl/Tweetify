@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 
 export function LogoutBtn(props: any) {
 	return (
@@ -24,6 +24,19 @@ export function LogoutBtn(props: any) {
 	);
 }
 
+type ConProps = {
+	username: string;
+};
+
+export function ConnectionBtn(props: ConProps) {
+	const [connected, setConnection] = useState(false);
+	// Check Connection
+	// if connected then set connected to true
+	// else set connected to false
+
+	return connected ? <UnFollowBtn username={props.username} /> : <FollowBtn username={props.username} />;
+}
+
 export function FollowBtn(props: any) {
 	const handleCreateConnection = () => {
 		// Create Connection
@@ -31,7 +44,7 @@ export function FollowBtn(props: any) {
 
 	return (
 		<button
-			className='ml-auto theme-bg-blue rounded-full px-3 py-0 text-[0.5rem] text-white h-6 my-auto'
+			className='theme-bg-blue rounded-full px-3 py-0 text-[0.9rem] text-white h-6 my-auto'
 			onClick={handleCreateConnection}
 		>
 			Follow
@@ -46,7 +59,7 @@ export function UnFollowBtn(props: any) {
 
 	return (
 		<button
-			className='ml-auto theme-bg-blue rounded-full px-3 py-0 text-[0.5rem] text-white h-6 my-auto'
+			className='theme-bg-blue rounded-full px-3 py-0 text-[0.9rem] text-white h-6 my-auto'
 			onClick={handleRemoveConnection}
 		>
 			UnFollow

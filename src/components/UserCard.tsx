@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {FollowBtn} from '../components/Button';
+import { ConnectionBtn } from '../components/Button';
 import Link from 'next/link';
 
 export function SmUserCard() {
@@ -21,7 +21,9 @@ export function SmUserCard() {
 							<div className='text-xs text-gray-500'>@username</div>
 						</div>
 						{/* Follow Button */}
-						<FollowBtn username='' />
+						<div className='ml-auto'>
+							<ConnectionBtn username='test' />
+						</div>
 					</div>
 					<div className='text-[0.6rem] text-gray-500 w-full overflow-hidden text-ellipsis ml-3 '>
 						{}...

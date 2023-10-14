@@ -11,6 +11,7 @@
 
 :root{
     --theme-blue: #1A8CD8;
+    --theme-gray: #D9D9D9;
 }
 
 .theme-blue{
@@ -26,9 +27,13 @@
 }
 
 .theme-grey{
-    color: #D9D9D9;
+    color: var(--theme-gray);
 }
 
 .theme-bg-grey{
-    background-color: #D9D9D9;
+    background-color: var(--theme-gray);
+}
+
+.theme-border-grey{
+    border-color: var(--theme-gray);
 }
