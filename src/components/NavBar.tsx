@@ -21,7 +21,7 @@ export default function NavBar() {
 	};
 
 	return (
-		<nav className='flex h-full sm:flex'>
+		<nav className='flex sm:flex z-10 '>
 			<div
 				className={`h-[94dvh] sm:h-[100dvh] w-auto bg-white sm:flex sm:flex-col absolute sm:static sm:border-0 border-r-2 px-2 pr-12 sm:px-0 border-gray-200 top-0 sm:left-0 duration-100 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] sm:shadow-none ${menuActiveClass}`}
 			>

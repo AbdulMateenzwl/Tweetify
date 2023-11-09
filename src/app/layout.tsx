@@ -4,8 +4,6 @@ import type { Metadata } from 'next';
 import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 
-
-
 export const metadata: Metadata = {
 	title: 'Tweetify | Home',
 	description:
@@ -22,11 +20,11 @@ export default function RootLayout({
 			<body className='flex justify-center'>
 				<main className=' flex flex-col sm:flex-row w-[1200px] justify-center'>
 					<NavBar />
-					<div className='w-[100vw] sm:w-[450px] md:w-[600px] xl:w-[700px] border-r-2 border-l-2 border-gray-200 flex flex-col'>
+					<div className='w-[100vw] sm:w-[450px] md:w-[600px] xl:w-[700px] border-r-2 border-l-2 border-gray-200 flex flex-col overflow-scroll'>
 						{children}
 					</div>
 					<div className='hidden xd:flex xd:flex-col xd:w-[300px] xl:w-[350px] px-2'>
-						<SearchBar/>
+						<SearchBar />
 					</div>
 				</main>
 			</body>

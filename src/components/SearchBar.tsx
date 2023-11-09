@@ -90,7 +90,7 @@ export default function SearchBar() {
 				<input
 					type='text'
 					placeholder='Search'
-					className='mx-4 active:outline-none focus:outline-none w-full'
+					className='mx-4 w-full border-none outline-none '
 					value={SearchText}
 					onChange={handleOnTextChange}
 				></input>{' '}

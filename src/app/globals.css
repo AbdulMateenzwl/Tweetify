@@ -9,6 +9,18 @@
     padding: 0;
 }
 
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+}
+
 :root{
     --theme-blue: #1A8CD8;
     --theme-gray: #D9D9D9;

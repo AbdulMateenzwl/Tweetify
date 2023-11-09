@@ -1,24 +1,30 @@
+'use client';
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { ConnectionBtn } from '../components/Button';
-import Link from 'next/link';
+import { Carousel } from 'flowbite-react';
 
-export function SmUserCard() {
+export default function Tweet() {
 	const verified = true;
+	const datePosted = new Date();
+	const Images = [
+		'https://images.unsplash.com/photo-1484807352052-23338990c6c6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+	];
 
 	return (
-		<Link href={'/'}>
-			<div className='flex items-center p-2  hover:bg-[#F7F7F7] cursor-pointer '>
-				<Image
-					src='/user-solid.svg'
-					alt='avatar'
-					className='rounded-full'
-					width={30}
-					height={30}
-				/>
-				<div className='flex flex-col w-full'>
-					<div className='flex ml-3'>
-						<div className=''>
+		<div className='hover:bg-[#F7F7F7]'>
+			<Link href={'/'}>
+				<div className='flex items-center p-2   cursor-pointer '>
+					<Image
+						src='/user-solid.svg'
+						alt='avatar'
+						className='rounded-full'
+						width={30}
+						height={30}
+					/>
+					<div className='flex flex-col w-full'>
+						<div className='flex ml-3'>
 							<div className='flex items-center justify-center'>
 								<div className='text-sm font-semibold'>Full Name</div>
 								{verified && (
@@ -54,19 +60,78 @@ export function SmUserCard() {
 										</defs>
 									</svg>
 								)}
+								<div className='text-xs text-gray-500 ml-3'>@username</div>
+								<div className='text-sm ml-3'>
+									{datePosted.toLocaleDateString('en-US')}
+								</div>
 							</div>
-							<div className='text-xs text-gray-500'>@username</div>
+							{/* Follow Button */}
+							<div className='ml-auto'>
+								<ConnectionBtn username='test' />
+							</div>
 						</div>
-						{/* Follow Button */}
-						<div className='ml-auto'>
-							<ConnectionBtn username='test' />
+						<div className='text-[0.6rem] text-gray-500 w-full overflow-hidden text-ellipsis ml-3 '>
+							{}...
 						</div>
-					</div>
-					<div className='text-[0.6rem] text-gray-500 w-full overflow-hidden text-ellipsis ml-3 '>
-						{}...
 					</div>
 				</div>
-			</div>
-		</Link>
+				<div className='ml-14 mr-3 '>
+					<div className='h-56 sm:h-64 xl:h-80 2xl:h-96 z-0'>
+						<Carousel className='z-0'>
+							{Images.length > 0 &&
+								Images.map((image) => (
+									<img src={image} alt='image' className='w-full' />
+								))}
+						</Carousel>
+					</div>
+					<div className='flex py-2 justify-between'>
+						<div>
+							<Link href='/'>
+								<Image
+									src={'/comment-regular.svg'}
+									alt='comment icon'
+									width={18}
+									height={18}
+								></Image>
+							</Link>
+							<Link href='/'>{/* Comment Count */}</Link>
+						</div>
+						<div>
+							<Link href='/'>
+								<Image
+									src={'/retweet-solid.svg'}
+									alt='comment icon'
+									width={18}
+									height={18}
+								></Image>
+							</Link>
+							<Link href='/'>{/* Retweet Count */}</Link>
+						</div>
+						<div>
+							<Link href='/'>
+								<Image
+									src={'/heart-regular.svg'}
+									alt='comment icon'
+									width={18}
+									height={18}
+								></Image>
+							</Link>
+							<Link href='/'>{/* Like Count */}</Link>
+						</div>
+						<div>
+							<Link href='/'>
+								<Image
+									src={'/arrow-right-from-bracket-solid.svg'}
+									alt='comment icon'
+									width={18}
+									height={18}
+									className='-rotate-90'
+								></Image>
+							</Link>
+						</div>
+					</div>
+				</div>
+			</Link>
+		</div>
 	);
 }
