@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { ConnectionBtn } from '../../../components/Button';
 
 import { usePathname } from 'next/navigation';
-import path from 'path';
 import Link from 'next/link';
 
 export default function page() {

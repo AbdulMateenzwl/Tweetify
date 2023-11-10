@@ -14,7 +14,7 @@ export default function Tweet() {
 
 	return (
 		<div className='hover:bg-[#F7F7F7]'>
-			<Link href={'/'}>
+			{/* <Link href={'/'}> */}
 				<div className='flex items-center p-2   cursor-pointer '>
 					<Image
 						src='/user-solid.svg'
@@ -76,14 +76,14 @@ export default function Tweet() {
 					</div>
 				</div>
 				<div className='ml-14 mr-3 '>
-					<div className='h-56 sm:h-64 xl:h-80 2xl:h-96 z-0'>
+					{/* <div className='h-56 sm:h-64 xl:h-80 2xl:h-96 z-0'>
 						<Carousel className='z-0'>
 							{Images.length > 0 &&
 								Images.map((image) => (
 									<img src={image} alt='image' className='w-full' />
 								))}
 						</Carousel>
-					</div>
+					</div> */}
 					<div className='flex py-2 justify-between'>
 						<div>
 							<Link href='/'>
@@ -131,7 +131,7 @@ export default function Tweet() {
 						</div>
 					</div>
 				</div>
-			</Link>
+			{/* </Link> */}
 		</div>
 	);
 }

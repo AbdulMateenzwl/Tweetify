@@ -1,20 +1,24 @@
+'use client';
 import './globals.css';
-import type { Metadata } from 'next';
-// import { Inter } from 'next/font/google';
+
 import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
-
-export const metadata: Metadata = {
-	title: 'Tweetify | Home',
-	description:
-		'Tweetify is a open social media platform for public to share there opinions.',
-};
+import { usePathname } from 'next/navigation';
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	let path = usePathname();
+	if (path === '/login' || path === '/signup' || path === '/') {
+		return (
+			<html lang='en'>
+				<body>{children}</body>
+			</html>
+		);
+	}
+
 	return (
 		<html lang='en'>
 			<body className='flex justify-center'>
