@@ -3,7 +3,7 @@ import Tweet from '../../components/Tweet';
 
 export default function Home() {
 	return (
-		<main className='h-[100dvh] no-scrollbar overflow-x-hidden'>
+		<main className='h-[100dvh] no-scrollbar overflow-x-auto'>
 			<SmUserCard />
 			<SmUserCard />
 			<SmUserCard />

@@ -14,11 +14,11 @@ export default function page() {
 				<img
 					src={'/twitter.svg'}
 					alt='logo'
-					className=' min-h-[40px] min-w-[40px] h-auto w-auto md:m-32 mx-4'
+					className=' min-h-[40px] min-w-[40px] h-auto w-auto md:m-32 mx-4 my-3'
 				></img>
 			</Link>
-			<div className='flex-1 flex items-center justify-center '>
-				<div className='flex flex-col md:border-1 md:border-gray-400 md:rounded-2xl md:p-8 md:shadow-xl'>
+			<div className='flex-1 flex items-center justify-center my-32 md:my-0'>
+				<div className='flex flex-col sm:border-1 sm:border-gray-400 sm:rounded-2xl sm:p-8 sm:shadow-xl'>
 					<h1 className='text-4xl font-bold'>Happening now</h1>
 					<h2 className='text-2xl font-bold'>Join Tweetify today.</h2>
 					<div className='flex flex-col items-stretch justify-center mt-8'>
