@@ -28,7 +28,7 @@ export default function RootLayout({
 						{children}
 					</div>
 					<div className='hidden xd:flex xd:flex-col xd:w-[300px] xl:w-[350px] px-2'>
-						<SearchBar />
+						<SearchBar resultCount={3} />
 					</div>
 				</main>
 			</body>

@@ -5,7 +5,11 @@ import Image from 'next/image';
 
 import Spinner from './Spinner';
 
-export default function SearchBar() {
+type propType = {
+	resultCount?: number;
+};
+
+export default function SearchBar(props:propType) {
 	const [SearchText, setSearchText] = useState('');
 
 	const [loading, setLoading] = useState(false);
