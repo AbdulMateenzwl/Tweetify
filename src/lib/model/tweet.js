@@ -10,6 +10,8 @@ const TweetModel = new mongoose.Schema({
 		default: 'tweet',
 	},
 	text: String,
+	imagesLink: { type: Array, default: [] },
+	videosLink: { type: Array, default: [] },
 	updatedAt: { type: String, default: Date.now },
 	linkedTweetId: { type: String, default: '' },
 	likedby: { type: Array, default: [] },

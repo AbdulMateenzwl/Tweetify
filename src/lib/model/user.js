@@ -18,7 +18,6 @@ const userModel = new mongoose.Schema({
 	profilePicture: { type: String, default: '' },
 	coverPicture: { type: String, default: '' },
 	bookmarkTweet: { type: Array, default: [] },
-	
 });
 
 export const User = mongoose.models.users || mongoose.model('users', userModel);

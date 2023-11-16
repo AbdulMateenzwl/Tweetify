@@ -4,7 +4,7 @@ import { connectionStr } from '../../../lib/db';
 
 import { NextResponse } from 'next/server';
 
-// Create User
+// Get User with username and password
 export async function POST(request) {
 	const payload = await request.json();
 	await mongoose.connect(connectionStr);
