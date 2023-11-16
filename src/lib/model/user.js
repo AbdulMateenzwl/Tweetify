@@ -15,8 +15,8 @@ const userModel = new mongoose.Schema({
 	link:{ type: String, default: '' },
 	linkText:{ type: String, default: '' },
 	isDeleted: { type: Boolean, default: false },
-	profilePicture: { type: String, default: '' },
-	coverPicture: { type: String, default: '' },
+	profilePictureLink: { type: String, default: '' },
+	coverPictureLink: { type: String, default: '' },
 	bookmarkTweet: { type: Array, default: [] },
 });
 
