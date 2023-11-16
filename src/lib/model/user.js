@@ -6,7 +6,7 @@ const userModel = new mongoose.Schema({
 	lastName: String,
 	email: String,
 	passwordHash: String,
-	birthday: { type: String, default: Date.now },
+	birthday: { type: String, default: null },
 	isVerified: { type: Boolean, default: false },
 	createdAt: { type: String, default: Date.now },
 	updatedAt: { type: String, default: Date.now },
