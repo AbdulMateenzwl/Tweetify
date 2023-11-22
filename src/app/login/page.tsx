@@ -1,11 +1,44 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+
+import { useRouter } from 'next/navigation';
+import { showToast } from 'react-next-toast';
+
 export default function page() {
+	const router = useRouter();
+
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
 	function togglePasswordVisibility() {
 		setIsPasswordVisible(!isPasswordVisible);
+	}
+
+	async function handleLogin() {
+		const res = await fetch(`/api/user/${username}/${password}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+
+		// Check the status code
+		if (res.ok) {
+			// Status code is in the range 200-299 (success)
+			const data = await res.json();
+			if (data.error) {
+			} else {
+				showToast.success('Log in successful');
+				console.log(data.findUser._id)
+				localStorage.setItem('loggedUserId', data.findUser._id);
+				router.push('/home');
+			}
+		} else {
+			showToast.error('Please check your credentials');
+		}
 	}
 
 	return (
@@ -29,12 +62,18 @@ export default function page() {
 							type='text'
 							className='rounded-full m-2'
 							placeholder='Email / Username'
+							value={username}
+							onChange={(e) => setUsername(e.target.value)}
+							required
 						/>
 						<div className='flex'>
 							<input
 								type={isPasswordVisible === true ? 'password' : 'text'}
 								className='rounded-full m-2'
 								placeholder='Password'
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+								required
 							/>
 							<div
 								className='flex flex-row items-center justify-center'
@@ -43,12 +82,13 @@ export default function page() {
 								<input type='checkbox' className='m-2' />
 							</div>
 						</div>
-						<Link
-							href={'/login'}
+						<button
 							className='bg-white text-blue-500 rounded-full px-4 py-2 m-2 border-blue-500 border-1 w-auto flex items-center justify-center'
+							type='submit'
+							onClick={handleLogin}
 						>
 							Log in
-						</Link>
+						</button>
 						<Link
 							href={'/signup'}
 							className=' bg-blue-500 text-white rounded-full px-4 py-2 m-2 w-auto flex items-center justify-center'
