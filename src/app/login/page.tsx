@@ -32,7 +32,6 @@ export default function page() {
 			if (data.error) {
 			} else {
 				showToast.success('Log in successful');
-				console.log(data.findUser._id)
 				localStorage.setItem('loggedUserId', data.findUser._id);
 				router.push('/home');
 			}

@@ -1,10 +1,24 @@
 'use client';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { showToast } from 'react-next-toast';
+import logOut from '../utils/Auth/logOut';
 
 export function LogoutBtn(props: any) {
+
+	const router = useRouter();
+
+	const handleLogout = () => {
+		logOut();
+		showToast.success('Logged Out Successfully');
+		router.push('/login');
+	};
+
+
 	return (
 		<button
 			className={`bg-red-400 text-white hover:bg-red-700 rounded-full px-4 py-3 mt-2 mx-2 xl:mx-auto font-semibold flex  items-center justify-center aspect-auto sm:aspect-square xl:aspect-auto xl:w-[85%] sm:opacity-100 hover:opacity-100 active:opacity-100 ${props.className}`}
+			onClick={handleLogout}
 		>
 			<svg
 				width='30'

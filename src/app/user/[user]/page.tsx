@@ -7,7 +7,18 @@ import { ConnectionBtn } from '../../../components/Button';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
+import isAuthenticated from '../../../utils/Auth/auth';
+import { redirect } from 'next/navigation';
+import { useLayoutEffect } from 'react';
+
 export default function page() {
+	useLayoutEffect(() => {
+		const isAuth = isAuthenticated();
+		if (!isAuth) {
+			redirect('/login');
+		}
+	}, []);
+
 	const route = usePathname();
 	const userName = route.replace('/user/', '');
 
@@ -70,7 +81,7 @@ export default function page() {
 						viewBox='0 0 31 31'
 						fill='none'
 						xmlns='http://www.w3.org/2000/svg'
-            className='ml-2'
+						className='ml-2'
 					>
 						<path
 							fill-rule='evenodd'
@@ -97,7 +108,10 @@ export default function page() {
 					</svg>
 				</div>
 				<h3 className='text-sm text-gray-500'>@{userName}</h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, officia esse! Ducimus iste?</p>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio,
+					officia esse! Ducimus iste?
+				</p>
 			</div>
 		</main>
 	);
