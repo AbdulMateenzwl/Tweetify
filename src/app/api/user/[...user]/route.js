@@ -20,14 +20,29 @@ export async function GET(request, content) {
 	}
 }
 
-
-export async function POST(request) {
+export async function PUT(request, content) {
 	try {
 		await mongoose.connect(connectionStr);
+
+		// Extract user ID from the request parameters or body
+		const userId = content.params.user[0];
+
+		// Find the user by ID
+		let user = await User.findById(userId);
+
+		// Check if the user exists
+		if (!user) {
+			return notFoundError();
+		}
+
+		// Update user fields based on the request body
 		const payload = await request.json();
-		let user = new User(payload);
+		user.set(payload);
+
+		// Save the updated user
 		await user.save();
-		return NextResponse.json({ user }, { status: 200 });		
+
+		return NextResponse.json({ user }, { status: 200 });
 	} catch {
 		internalServerError();
 	}
