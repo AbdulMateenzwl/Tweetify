@@ -14,10 +14,8 @@ export async function GET(request, content) {
 		const tweets = await Tweet.find({ userId: user_Id, isDeleted: false });
 
 		return NextResponse.json({ tweets }, { status: 200 });
-
-		return NextResponse.json({ status: 200 });
 	} catch {
-		// internalServerError();
+		internalServerError();
 	}
 }
 
