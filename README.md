@@ -33,7 +33,7 @@ To run Tweetify locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/tweetify.git
+   git clone https://github.com/abdulmateenzwl/tweetify.git
    ```
 
 2. Navigate to the project directory and install the dependencies:
@@ -64,7 +64,7 @@ To run Tweetify locally, follow these steps:
 ## Technologies Used
 
 - Next.js for the frontend.
-- SQL for the database.
+- MongoDB for database
 - Other technologies mentioned in my skills section.
 
 ## Contributing
